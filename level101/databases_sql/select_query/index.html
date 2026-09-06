@@ -8,11 +8,17 @@
       
       
       
-      
         <link rel="canonical" href="https://linkedin.github.io/school-of-sre/level101/databases_sql/select_query/">
       
-      <link rel="shortcut icon" href="../../../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+      
+        <link rel="prev" href="../operations/">
+      
+      
+        <link rel="next" href="../query_performance/">
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.12">
     
     
       
@@ -20,40 +26,38 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e359304.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
-        
-      
-    
-    
-    
-      
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
-    
     
     
       <link rel="stylesheet" href="../../../stylesheets/custom.css">
     
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+
+    
     
     
   </head>
   
   
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
-      
+    <body dir="ltr">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -71,6 +75,7 @@
       
     </div>
     
+    
       
    <script async defer data-domain="linkedin.github.io" src="https://tracking.eskratch.com/js/plausible.js"></script>
 <script>document.addEventListener("DOMContentLoaded", function() {
@@ -84,25 +89,25 @@
 
 
 <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://linkedin.github.io/school-of-sre/" title="School Of SRE" class="md-header-nav__button md-logo" aria-label="School Of SRE">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
+    <a href="https://linkedin.github.io/school-of-sre/" title="School Of SRE" class="md-header__button md-logo" aria-label="School Of SRE">
       
   <img src="../../../img/sos.png" alt="logo">
 
     </a>
     <!-- Button to open drawer -->
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
+    <div class="md-header__title" data-md-component="header-title">
       
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+        <div class="md-header__ellipsis">
+          <span class="md-header__topic md-ellipsis">
             <a href="https://linkedin.github.io/school-of-sre/" title="School Of SRE" >
               School Of SRE
             </a>
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+          <span class="md-header__topic md-ellipsis">
             
               Select Query
             
@@ -111,22 +116,28 @@
       
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -134,7 +145,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -149,31 +160,64 @@
       
       
         
+          
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<!-- Determine classes -->
+
+
+
+
+<!-- Navigation -->
+<nav
+  class="md-nav md-nav--primary"
+  aria-label="Navigation"
+  data-md-level="0"
+>
+
+  <!-- Repository information -->
   
+
+  <!-- Navigation list -->
   <ul class="md-nav__list" data-md-scrollfix>
     
       
       
-      
 
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../.." class="md-nav__link">
-        Home
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
@@ -181,577 +225,1724 @@
     
       
       
-      
 
+  <!-- Determine classes -->
   
   
     
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
       
+        
+        
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-      <label class="md-nav__link" for="nav-2">
-        Level 101
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Level 101" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
-          <span class="md-nav__icon md-icon"></span>
-          Level 101
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2"
+          checked
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
-          
+          <label
+            class="md-nav__link"
+            for="__nav_2"
+            id="__nav_2_label"
+            tabindex=""
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Level 101
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="1"
+          aria-labelledby="__nav_2_label"
+          aria-expanded="true"
+        >
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Level 101
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" >
-      
-      <label class="md-nav__link" for="nav-2-1">
-        Fundamentals Series
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Fundamentals Series" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-1">
-          <span class="md-nav__icon md-icon"></span>
-          Fundamentals Series
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_1"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_1"
+            id="__nav_2_1_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Fundamentals Series
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_2_1_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentals Series
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1-1" type="checkbox" id="nav-2-1-1" >
-      
-      <label class="md-nav__link" for="nav-2-1-1">
-        Linux Basics
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Linux Basics" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-1-1">
-          <span class="md-nav__icon md-icon"></span>
-          Linux Basics
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_1_1"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_1_1"
+            id="__nav_2_1_1_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Linux Basics
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_2_1_1_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_basics/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_basics/command_line_basics/" class="md-nav__link">
-        Command Line Basics
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Command Line Basics
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_basics/linux_server_administration/" class="md-nav__link">
-        Server Administration
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Server Administration
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_basics/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1-2" type="checkbox" id="nav-2-1-2" >
-      
-      <label class="md-nav__link" for="nav-2-1-2">
-        Git
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Git" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-1-2">
-          <span class="md-nav__icon md-icon"></span>
-          Git
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_1_2"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_1_2"
+            id="__nav_2_1_2_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Git
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_2_1_2_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Git
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../git/git-basics/" class="md-nav__link">
-        Git Basics
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Git Basics
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../git/branches/" class="md-nav__link">
-        Working With Branches
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Working With Branches
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../git/github-hooks/" class="md-nav__link">
-        Github and Hooks
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Github and Hooks
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../git/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1-3" type="checkbox" id="nav-2-1-3" >
-      
-      <label class="md-nav__link" for="nav-2-1-3">
-        Linux Networking
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Linux Networking" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-1-3">
-          <span class="md-nav__icon md-icon"></span>
-          Linux Networking
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_1_3"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_1_3"
+            id="__nav_2_1_3_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Linux Networking
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_2_1_3_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_networking/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_networking/dns/" class="md-nav__link">
-        DNS
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    DNS
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_networking/udp/" class="md-nav__link">
-        UDP
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    UDP
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_networking/http/" class="md-nav__link">
-        HTTP
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    HTTP
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_networking/tcp/" class="md-nav__link">
-        TCP
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    TCP
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_networking/ipr/" class="md-nav__link">
-        Routing
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Routing
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../linux_networking/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
+              
             
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" >
-      
-      <label class="md-nav__link" for="nav-2-2">
-        Python and Web
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Python and Web" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-2">
-          <span class="md-nav__icon md-icon"></span>
-          Python and Web
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_2"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_2"
+            id="__nav_2_2_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Python and Web
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_2_2_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python and Web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../python_web/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../python_web/python-concepts/" class="md-nav__link">
-        Some Python Concepts
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Some Python Concepts
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../python_web/python-web-flask/" class="md-nav__link">
-        Python, Web and Flask
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Python, Web and Flask
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../python_web/url-shorten-app/" class="md-nav__link">
-        The URL Shortening App
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    The URL Shortening App
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../python_web/sre-conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
     
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
-      
-      <label class="md-nav__link" for="nav-2-3">
-        Data
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Data" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-3">
-          <span class="md-nav__icon md-icon"></span>
-          Data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_3"
+          checked
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
-          
+          <label
+            class="md-nav__link"
+            for="__nav_2_3"
+            id="__nav_2_3_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Data
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_2_3_label"
+          aria-expanded="true"
+        >
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
     
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-1" type="checkbox" id="nav-2-3-1" checked>
-      
-      <label class="md-nav__link" for="nav-2-3-1">
-        Relational Databases
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Relational Databases" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-3-1">
-          <span class="md-nav__icon md-icon"></span>
-          Relational Databases
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_3_1"
+          checked
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
-          
+          <label
+            class="md-nav__link"
+            for="__nav_2_3_1"
+            id="__nav_2_3_1_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Relational Databases
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_2_3_1_label"
+          aria-expanded="true"
+        >
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Relational Databases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../concepts/" class="md-nav__link">
-        Key Concepts
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Key Concepts
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../mysql/" class="md-nav__link">
-        MySQL
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    MySQL
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../innodb/" class="md-nav__link">
-        InnoDB
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    InnoDB
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../backup_recovery/" class="md-nav__link">
-        Backup and Recovery
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Backup and Recovery
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../replication/" class="md-nav__link">
-        MySQL Replication
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    MySQL Replication
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
-    
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
   
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-1-7" type="checkbox" id="nav-2-3-1-7" checked>
-      
-      <label class="md-nav__link" for="nav-2-3-1-7">
-        Operational Concepts
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Operational Concepts" data-md-level="4">
-        <label class="md-nav__title" for="nav-2-3-1-7">
-          <span class="md-nav__icon md-icon"></span>
-          Operational Concepts
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Operational Concepts
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+      </a>
+    </li>
+  
+
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
     
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+
+      <!-- State toggle -->
+      <input
+        class="md-nav__toggle md-toggle"
+        type="checkbox"
+        id="__toc"
+      />
+
+      <!-- Hack: see partials/toc.html for more information -->
       
+      
+
+      <!-- Navigation link to table of contents -->
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Select Query
+          
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Select Query
+  </span>
+
+  <!-- Navigation link status -->
+  
+
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Select Query
+      <a
+        href="./"
+        class="md-nav__link md-nav__link--active"
+      >
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Select Query
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
+
+      <!-- Table of contents -->
       
         
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
   
@@ -759,18 +1950,22 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#select-query" class="md-nav__link">
-    SELECT Query
+    <span class="md-ellipsis">
+      SELECT Query
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#select-joins" class="md-nav__link">
-    SELECT - JOINS
+    <span class="md-ellipsis">
+      SELECT - JOINS
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="SELECT - JOINS">
@@ -778,7 +1973,9 @@
         
           <li class="md-nav__item">
   <a href="#select-subquery" class="md-nav__link">
-    SELECT - Subquery
+    <span class="md-ellipsis">
+      SELECT - Subquery
+    </span>
   </a>
   
 </li>
@@ -793,1254 +1990,3889 @@
 </nav>
       
     </li>
+
+  <!-- Navigation item -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../query_performance/" class="md-nav__link">
-        Query Performance
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Query Performance
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
-    </li>
+              
+            
+              
+                
+
+  <!-- Determine classes -->
+  
   
 
-          
-            
+  <!-- Determine active page for paginated views -->
   
-  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../lab/" class="md-nav__link">
-        Lab
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Lab
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-2" type="checkbox" id="nav-2-3-2" >
-      
-      <label class="md-nav__link" for="nav-2-3-2">
-        NoSQL
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="NoSQL" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-3-2">
-          <span class="md-nav__icon md-icon"></span>
-          NoSQL
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_3_2"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_3_2"
+            id="__nav_2_3_2_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    NoSQL
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_2_3_2_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            NoSQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../databases_nosql/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../databases_nosql/key_concepts/" class="md-nav__link">
-        Key Concepts
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Key Concepts
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../databases_nosql/further_reading/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+              
+                
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
+    
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_3_3"
           
-        </ul>
-      </nav>
+        />
+
+        <!-- Toggle to expand nested items -->
+        
+          
+          <label
+            class="md-nav__link"
+            for="__nav_2_3_3"
+            id="__nav_2_3_3_label"
+            tabindex="0"
+          >
+            
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Message Queue
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_2_3_3_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Message Queue
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../messagequeue/intro/" class="md-nav__link">
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+      </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../messagequeue/key_concepts/" class="md-nav__link">
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Key Concepts
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
+  
+    <li class="md-nav__item">
+      <a href="../../messagequeue/further_reading/" class="md-nav__link">
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+              
+                
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3-3" type="checkbox" id="nav-2-3-3" >
-      
-      <label class="md-nav__link" for="nav-2-3-3">
-        Big Data
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Big Data" data-md-level="3">
-        <label class="md-nav__title" for="nav-2-3-3">
-          <span class="md-nav__icon md-icon"></span>
-          Big Data
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_3_4"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_3_4"
+            id="__nav_2_3_4_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Big Data
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_2_3_4_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Big Data
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../big_data/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../big_data/evolution/" class="md-nav__link">
-        Evolution and Architecture of Hadoop
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Evolution and Architecture of Hadoop
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../big_data/tasks/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
+              
             
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
-      
-      <label class="md-nav__link" for="nav-2-4">
-        Systems Design
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Systems Design" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-4">
-          <span class="md-nav__icon md-icon"></span>
-          Systems Design
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_4"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_4"
+            id="__nav_2_4_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Systems Design
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_2_4_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Systems Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../systems_design/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../systems_design/scalability/" class="md-nav__link">
-        Scalability
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Scalability
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../systems_design/availability/" class="md-nav__link">
-        Availability
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Availability
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../systems_design/fault-tolerance/" class="md-nav__link">
-        Fault Tolerance
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Fault Tolerance
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../systems_design/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" >
-      
-      <label class="md-nav__link" for="nav-2-5">
-        Metrics and Monitoring
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Metrics and Monitoring" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-5">
-          <span class="md-nav__icon md-icon"></span>
-          Metrics and Monitoring
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_5"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_5"
+            id="__nav_2_5_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Metrics and Monitoring
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_2_5_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Metrics and Monitoring
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../metrics_and_monitoring/introduction/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../metrics_and_monitoring/command-line_tools/" class="md-nav__link">
-        Command-line Tools
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Command-line Tools
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../metrics_and_monitoring/third-party_monitoring/" class="md-nav__link">
-        Third-party Monitoring
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Third-party Monitoring
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../metrics_and_monitoring/alerts/" class="md-nav__link">
-        Proactive Monitoring with Alerts
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Proactive Monitoring with Alerts
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../metrics_and_monitoring/best_practices/" class="md-nav__link">
-        Best Practices for Monitoring
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Best Practices for Monitoring
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../metrics_and_monitoring/observability/" class="md-nav__link">
-        Observability
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Observability
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../metrics_and_monitoring/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
-      
-      <label class="md-nav__link" for="nav-2-6">
-        Security
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Security" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-6">
-          <span class="md-nav__icon md-icon"></span>
-          Security
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_2_6"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_2_6"
+            id="__nav_2_6_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Security
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_2_6_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Security
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../security/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../security/fundamentals/" class="md-nav__link">
-        Fundamentals of Security
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Fundamentals of Security
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../security/network_security/" class="md-nav__link">
-        Network Security
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Network Security
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../security/threats_attacks_defences/" class="md-nav__link">
-        Threat, Attacks & Defences
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Threat, Attacks & Defences
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../security/writing_secure_code/" class="md-nav__link">
-        Writing Secure code
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Writing Secure code
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../security/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
 
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+        
+        
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3"
+          
+        />
+
+        <!-- Toggle to expand nested items -->
+        
+          
+          <label
+            class="md-nav__link"
+            for="__nav_3"
+            id="__nav_3_label"
+            tabindex=""
+          >
+            
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Level 102
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="1"
+          aria-labelledby="__nav_3_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Level 102
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
+  
+  
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
+    
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
-      
-      <label class="md-nav__link" for="nav-3">
-        Level 102
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Level 102" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
-          <span class="md-nav__icon md-icon"></span>
-          Level 102
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_1"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_1"
+            id="__nav_3_1_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
   
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Linux Intermediate
+  </span>
+
+  <!-- Navigation link status -->
   
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
-      
-      <label class="md-nav__link" for="nav-3-1">
-        Linux Intermediate
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Linux Intermediate" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-1">
-          <span class="md-nav__icon md-icon"></span>
-          Linux Intermediate
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-          
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_3_1_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Intermediate
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/linux_intermediate/introduction/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/linux_intermediate/package_management/" class="md-nav__link">
-        Package Management
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Package Management
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/linux_intermediate/storage_media/" class="md-nav__link">
-        Storage Media
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Storage Media
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/linux_intermediate/archiving_backup/" class="md-nav__link">
-        Archiving and Backup
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Archiving and Backup
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/linux_intermediate/introvim/" class="md-nav__link">
-        Introduction to Vim
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction to Vim
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/linux_intermediate/bashscripting/" class="md-nav__link">
-        Bash Scripting
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Bash Scripting
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/linux_intermediate/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
-      
-      <label class="md-nav__link" for="nav-3-2">
-        Linux Advanced
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Linux Advanced" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-2">
-          <span class="md-nav__icon md-icon"></span>
-          Linux Advanced
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_2"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_2"
+            id="__nav_3_2_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Linux Advanced
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_3_2_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Linux Advanced
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-1" type="checkbox" id="nav-3-2-1" >
-      
-      <label class="md-nav__link" for="nav-3-2-1">
-        Containerization And Orchestration
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Containerization And Orchestration" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-1">
-          <span class="md-nav__icon md-icon"></span>
-          Containerization And Orchestration
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_2_1"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_2_1"
+            id="__nav_3_2_1_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Containerization And Orchestration
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_3_2_1_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Containerization And Orchestration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/containerization_and_orchestration/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/containerization_and_orchestration/intro_to_containers/" class="md-nav__link">
-        Introduction To Containers
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction To Containers
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/containerization_and_orchestration/containerization_with_docker/" class="md-nav__link">
-        Containerization With Docker
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Containerization With Docker
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/containerization_and_orchestration/orchestration_with_kubernetes/" class="md-nav__link">
-        Orchestration With Kubernetes
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Orchestration With Kubernetes
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/containerization_and_orchestration/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
-      
-      <label class="md-nav__link" for="nav-3-2-2">
-        System Calls and Signals
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="System Calls and Signals" data-md-level="3">
-        <label class="md-nav__title" for="nav-3-2-2">
-          <span class="md-nav__icon md-icon"></span>
-          System Calls and Signals
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_2_2"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_2_2"
+            id="__nav_3_2_2_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    System Calls and Signals
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="3"
+          aria-labelledby="__nav_3_2_2_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            System Calls and Signals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_calls_and_signals/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_calls_and_signals/signals/" class="md-nav__link">
-        Signals
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Signals
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_calls_and_signals/system_calls/" class="md-nav__link">
-        System Calls
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    System Calls
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_calls_and_signals/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-          
+              
             
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
+    </li>
+
+  <!-- Currently active page -->
+  
+
+              
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
-      
-      <label class="md-nav__link" for="nav-3-3">
-        Networking
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Networking" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-3">
-          <span class="md-nav__icon md-icon"></span>
-          Networking
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_3"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_3"
+            id="__nav_3_3_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Networking
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_3_3_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/networking/introduction/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/networking/security/" class="md-nav__link">
-        Security
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Security
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/networking/scale/" class="md-nav__link">
-        Scale
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Scale
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/networking/rtt/" class="md-nav__link">
-        RTT
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    RTT
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/networking/infrastructure-features/" class="md-nav__link">
-        Infrastructure Services
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Infrastructure Services
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/networking/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
-      
-      <label class="md-nav__link" for="nav-3-4">
-        System Design
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="System Design" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-4">
-          <span class="md-nav__icon md-icon"></span>
-          System Design
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_4"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_4"
+            id="__nav_3_4_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    System Design
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_3_4_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_design/intro/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_design/large-system-design/" class="md-nav__link">
-        Large System Design
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Large System Design
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_design/scaling/" class="md-nav__link">
-        Scaling
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Scaling
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_design/scaling-beyond-the-datacenter/" class="md-nav__link">
-        Scaling Beyond the Data Center
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Scaling Beyond the Data Center
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_design/resiliency/" class="md-nav__link">
-        Resiliency
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Resiliency
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_design/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" >
-      
-      <label class="md-nav__link" for="nav-3-5">
-        System Troubleshooting and Performance Improvements
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="System Troubleshooting and Performance Improvements" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-5">
-          <span class="md-nav__icon md-icon"></span>
-          System Troubleshooting and Performance Improvements
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_5"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_5"
+            id="__nav_3_5_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    System Troubleshooting and Performance Improvements
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_3_5_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            System Troubleshooting and Performance Improvements
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_troubleshooting_and_performance/introduction/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_troubleshooting_and_performance/troubleshooting/" class="md-nav__link">
-        Troubleshooting
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Troubleshooting
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_troubleshooting_and_performance/important-tools/" class="md-nav__link">
-        Important Tools
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Important Tools
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_troubleshooting_and_performance/performance-improvements/" class="md-nav__link">
-        Performance Improvements
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Performance Improvements
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_troubleshooting_and_performance/troubleshooting-example/" class="md-nav__link">
-        Troubleshooting Example
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Troubleshooting Example
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/system_troubleshooting_and_performance/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
   
+
+  <!-- Navigation item with nested items -->
+  
+
+    <!-- Determine all nested items that are index pages -->
     
+    
+
+    <!-- Navigation tabs -->
+    
+
+      <!-- Render 1st level items with nested items as sections -->
+      
+    
+
+    <!-- Navigation pruning -->
+    
+
+    <!-- Nested navigation item -->
     <li class="md-nav__item md-nav__item--nested">
       
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6" >
-      
-      <label class="md-nav__link" for="nav-3-6">
-        Continuous Integration and Continuous Delivery
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Continuous Integration and Continuous Delivery" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-6">
-          <span class="md-nav__icon md-icon"></span>
-          Continuous Integration and Continuous Delivery
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
+        
+
+        <!-- Determine checked and indeterminate state -->
+        
+
+        <!-- Active checkbox expands items contained within nested section -->
+        <input
+          class="md-nav__toggle md-toggle "
+          type="checkbox"
+          id="__nav_3_6"
           
+        />
+
+        <!-- Toggle to expand nested items -->
+        
           
+          <label
+            class="md-nav__link"
+            for="__nav_3_6"
+            id="__nav_3_6_label"
+            tabindex="0"
+          >
             
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Continuous Integration and Continuous Delivery
+  </span>
+
+  <!-- Navigation link status -->
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+
+        <!-- Toggle to expand nested items with link to index page -->
+        
+
+        <!-- Nested navigation -->
+        <nav
+          class="md-nav"
+          data-md-level="2"
+          aria-labelledby="__nav_3_6_label"
+          aria-expanded="false"
+        >
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Continuous Integration and Continuous Delivery
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+
+            <!-- Nested navigation item -->
+            
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/continuous_integration_and_continuous_delivery/introduction/" class="md-nav__link">
-        Introduction
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/continuous_integration_and_continuous_delivery/introduction_to_cicd/" class="md-nav__link">
-        What is CI/CD?
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    What is CI/CD?
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/continuous_integration_and_continuous_delivery/cicd_brief_history/" class="md-nav__link">
-        Brief History
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Brief History
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/continuous_integration_and_continuous_delivery/continuous_integration_build_pipeline/" class="md-nav__link">
-        Continuous Integration
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Continuous Integration
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/continuous_integration_and_continuous_delivery/continuous_delivery_release_pipeline/" class="md-nav__link">
-        Continuous Delivery and Deployment
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Continuous Delivery and Deployment
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/continuous_integration_and_continuous_delivery/jenkins_cicd_pipeline_hands_on_lab/" class="md-nav__link">
-        CI/CD Pipeline - Hands-on
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    CI/CD Pipeline - Hands-on
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
+              
             
+              
+                
+
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../level102/continuous_integration_and_continuous_delivery/conclusion/" class="md-nav__link">
-        Conclusion
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Conclusion
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
-          
-        </ul>
-      </nav>
+              
+            
+          </ul>
+        </nav>
+
+      <!-- Pruned navigation item -->
+      
     </li>
+
+  <!-- Currently active page -->
   
 
     
       
       
-      
 
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../CONTRIBUTING/" class="md-nav__link">
-        Contribute
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Contribute
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
@@ -2048,14 +5880,31 @@
     
       
       
-      
 
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../CODE_OF_CONDUCT/" class="md-nav__link">
-        Code of Conduct
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    Code of Conduct
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
@@ -2063,14 +5912,31 @@
     
       
       
-      
 
+  <!-- Determine classes -->
   
   
+
+  <!-- Determine active page for paginated views -->
+  
+
+  <!-- Navigation item with nested items -->
   
     <li class="md-nav__item">
       <a href="../../../sre_community/" class="md-nav__link">
-        SRE Community
+        
+
+  <!-- Navigation link icon -->
+  
+
+  <!-- Navigation link title -->
+  <span class="md-ellipsis">
+    SRE Community
+  </span>
+
+  <!-- Navigation link status -->
+  
+
       </a>
     </li>
   
@@ -2084,11 +5950,13 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
   
   
   
@@ -2096,18 +5964,22 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#select-query" class="md-nav__link">
-    SELECT Query
+    <span class="md-ellipsis">
+      SELECT Query
+    </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#select-joins" class="md-nav__link">
-    SELECT - JOINS
+    <span class="md-ellipsis">
+      SELECT - JOINS
+    </span>
   </a>
   
     <nav class="md-nav" aria-label="SELECT - JOINS">
@@ -2115,7 +5987,9 @@
         
           <li class="md-nav__item">
   <a href="#select-subquery" class="md-nav__link">
-    SELECT - Subquery
+    <span class="md-ellipsis">
+      SELECT - Subquery
+    </span>
   </a>
   
 </li>
@@ -2133,16 +6007,18 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                
-                  <h1>Select Query</h1>
-                
-                <h3 id="select-query">SELECT Query</h3>
-<p>The most commonly used command while working with MySQL is SELECT. It is used to fetch the result set from one or more tables. 
-The general form of a typical select query looks like:-</p>
+                  
+
+
+  <h1>Select Query</h1>
+
+<h3 id="select-query">SELECT Query</h3>
+<p>The most commonly used command while working with MySQL is <code>SELECT</code>. It is used to fetch the resultset from one or more tables. 
+The general form of a typical select query looks like:</p>
 <pre><code>SELECT expr
 FROM table1
 [WHERE condition]
@@ -2150,17 +6026,17 @@ FROM table1
 [ORDER BY column_list ASC|DESC]
 [LIMIT #]
 </code></pre>
-<p>The above general form contains some commonly used clauses of a SELECT query:-</p>
+<p>The above general form contains some commonly used clauses of a <code>SELECT</code> query:</p>
 <ul>
 <li><strong>expr</strong> - comma-separated column list or * (for all columns)</li>
 <li><strong>WHERE</strong> - a condition is provided, if true, directs the query to select only those records.</li>
-<li><strong>GROUP BY</strong> - groups the entire result set based on the column list provided. An aggregate function is recommended to be present in the select expression of the query. <strong>HAVING</strong> supports grouping by putting a condition on the selected or any other aggregate function.</li>
-<li><strong>ORDER BY</strong> - sorts the result set based on the column list in ascending or descending order.</li>
+<li><strong>GROUP BY</strong> - groups the entire resultset based on the column list provided. An aggregate function is recommended to be present in the select expression of the query. <strong>HAVING</strong> supports grouping by putting a condition on the selected or any other aggregate function.</li>
+<li><strong>ORDER BY</strong> - sorts the resultset based on the column list in ascending or descending order.</li>
 <li><strong>LIMIT</strong> - commonly used to limit the number of records.</li>
 </ul>
 <p>Let’s have a look at some examples for a better understanding of the above. The dataset used for the examples below is available <a href="https://dev.mysql.com/doc/employee/en/employees-installation.html">here</a> and is free to use.</p>
 <p><strong>Select all records</strong></p>
-<pre><code>mysql&gt; select * from employees limit 5;
+<pre><code class="language-shell">mysql&gt; SELECT * FROM employees LIMIT 5;
 +--------+------------+------------+-----------+--------+------------+
 | emp_no | birth_date | first_name | last_name | gender | hire_date  |
 +--------+------------+------------+-----------+--------+------------+
@@ -2173,7 +6049,7 @@ FROM table1
 5 rows in set (0.00 sec)
 </code></pre>
 <p><strong>Select specific fields for all records</strong></p>
-<pre><code>mysql&gt; select first_name, last_name, gender from employees limit 5;
+<pre><code class="language-shell">mysql&gt; SELECT first_name, last_name, gender FROM employees LIMIT 5;
 +------------+-----------+--------+
 | first_name | last_name | gender |
 +------------+-----------+--------+
@@ -2186,7 +6062,7 @@ FROM table1
 5 rows in set (0.00 sec)
 </code></pre>
 <p><strong>Select all records Where hire_date &gt;= January 1, 1990</strong></p>
-<pre><code>mysql&gt; select * from employees where hire_date &gt;= '1990-01-01' limit 5;
+<pre><code class="language-shell">mysql&gt; SELECT * FROM employees WHERE hire_date &gt;= '1990-01-01' LIMIT 5;
 +--------+------------+------------+-------------+--------+------------+
 | emp_no | birth_date | first_name | last_name   | gender | hire_date  |
 +--------+------------+------------+-------------+--------+------------+
@@ -2199,7 +6075,7 @@ FROM table1
 5 rows in set (0.01 sec)
 </code></pre>
 <p><strong>Select first_name and last_name from all records Where birth_date &gt;= 1960 AND gender = ‘F’</strong></p>
-<pre><code>mysql&gt; select first_name, last_name from employees where year(birth_date) &gt;= 1960 and gender='F' limit 5;
+<pre><code class="language-shell">mysql&gt; SELECT first_name, last_name FROM employees WHERE year(birth_date) &gt;= 1960 AND gender='F' LIMIT 5;
 +------------+-----------+
 | first_name | last_name |
 +------------+-----------+
@@ -2212,18 +6088,18 @@ FROM table1
 5 rows in set (0.00 sec)
 </code></pre>
 <p><strong>Display the total number of records</strong></p>
-<pre><code>mysql&gt; select count(*) from employees;
+<pre><code class="language-shell">mysql&gt; SELECT COUNT(*) FROM employees;
 +----------+
-| count(*) |
+| COUNT(*) |
 +----------+
 |   300024 |
 +----------+
 1 row in set (0.05 sec)
 </code></pre>
 <p><strong>Display gender-wise count of all records</strong></p>
-<pre><code>mysql&gt; select gender, count(*) from employees group by gender;
+<pre><code class="language-shell">mysql&gt; SELECT gender, COUNT(*) FROM employees GROUP BY gender;
 +--------+----------+
-| gender | count(*) |
+| gender | COUNT(*) |
 +--------+----------+
 | M      |   179973 |
 | F      |   120051 |
@@ -2231,9 +6107,9 @@ FROM table1
 2 rows in set (0.14 sec)
 </code></pre>
 <p><strong>Display the year of hire_date and number of employees hired that year, also only those years where more than 20k employees were hired</strong></p>
-<pre><code>mysql&gt; select year(hire_date), count(*) from employees group by year(hire_date) having count(*) &gt; 20000;
+<pre><code class="language-shell">mysql&gt; SELECT year(hire_date), COUNT(*) FROM employees GROUP BY year(hire_date) HAVING COUNT(*) &gt; 20000;
 +-----------------+----------+
-| year(hire_date) | count(*) |
+| year(hire_date) | COUNT(*) |
 +-----------------+----------+
 |            1985 |    35316 |
 |            1986 |    36150 |
@@ -2246,8 +6122,8 @@ FROM table1
 +-----------------+----------+
 8 rows in set (0.14 sec)
 </code></pre>
-<p><strong>Display all records ordered by their hire_date in descending order. If hire_date is the same then in order of their birth_date ascending order</strong></p>
-<pre><code>mysql&gt; select * from employees order by hire_date desc, birth_date asc limit 5;
+<p><strong>Display all records ordered by their hire_date in descending order. If hire_date is the same, then in order of their birth_date ascending order</strong></p>
+<pre><code class="language-shell">mysql&gt; SELECT * FROM employees ORDER BY hire_date DESC, birth_date ASC LIMIT 5;
 +--------+------------+------------+-----------+--------+------------+
 | emp_no | birth_date | first_name | last_name | gender | hire_date  |
 +--------+------------+------------+-----------+--------+------------+
@@ -2260,20 +6136,20 @@ FROM table1
 5 rows in set (0.12 sec)
 </code></pre>
 <h3 id="select-joins">SELECT - JOINS</h3>
-<p>JOIN statement is used to produce a combined result set from two or more tables based on certain conditions. It can be also used with Update and Delete statements but we will be focussing on the select query. 
-Following is a basic general form for joins</p>
+<p><code>JOIN</code> statement is used to produce a combined resultset from two or more tables based on certain conditions. It can be also used with <code>UPDATE</code> and <code>DELETE</code> statements, but we will be focussing on the select query.</p>
+<p>Following is a basic general form for joins:</p>
 <pre><code>SELECT table1.col1, table2.col1, ... (any combination)
 FROM
 table1 &lt;join_type&gt; table2
 ON (or USING depends on join_type) table1.column_for_joining = table2.column_for_joining
 WHERE …
 </code></pre>
-<p>Any number of columns can be selected, but it is recommended to select only those which are relevant to increase the readability of the resultset. All other clauses like where, group by are not mandatory.
+<p>Any number of columns can be selected, but it is recommended to select only those which are relevant to increase the readability of the resultset. All other clauses like <code>WHERE</code>, <code>GROUP BY</code> are not mandatory.
 Let’s discuss the types of JOINs supported by MySQL Syntax.</p>
 <p><strong>Inner Join</strong></p>
 <p>This joins table A with table B on a condition. Only the records where the condition is True are selected in the resultset.</p>
-<p>Display some details of employees along with their salary</p>
-<pre><code>mysql&gt; select e.emp_no,e.first_name,e.last_name,s.salary from employees e join salaries s on e.emp_no=s.emp_no limit 5;
+<p>Display some details of employees along with their salary:</p>
+<pre><code class="language-shell">mysql&gt; SELECT e.emp_no,e.first_name,e.last_name,s.salary FROM employees e JOIN salaries s ON e.emp_no=s.emp_no LIMIT 5;
 +--------+------------+-----------+--------+
 | emp_no | first_name | last_name | salary |
 +--------+------------+-----------+--------+
@@ -2285,8 +6161,8 @@ Let’s discuss the types of JOINs supported by MySQL Syntax.</p>
 +--------+------------+-----------+--------+
 5 rows in set (0.00 sec)
 </code></pre>
-<p>Similar result can be achieved by</p>
-<pre><code>mysql&gt; select e.emp_no,e.first_name,e.last_name,s.salary from employees e join salaries s using (emp_no) limit 5;
+<p>Similar result can be achieved by:</p>
+<pre><code class="language-shell">mysql&gt; SELECT e.emp_no,e.first_name,e.last_name,s.salary FROM employees e JOIN salaries s USING (emp_no) LIMIT 5;
 +--------+------------+-----------+--------+
 | emp_no | first_name | last_name | salary |
 +--------+------------+-----------+--------+
@@ -2298,8 +6174,8 @@ Let’s discuss the types of JOINs supported by MySQL Syntax.</p>
 +--------+------------+-----------+--------+
 5 rows in set (0.00 sec)
 </code></pre>
-<p>And also by</p>
-<pre><code>mysql&gt; select e.emp_no,e.first_name,e.last_name,s.salary from employees e natural join salaries s limit 5;
+<p>And also by:</p>
+<pre><code class="language-shell">mysql&gt; SELECT e.emp_no,e.first_name,e.last_name,s.salary FROM employees e NATURAL JOIN salaries s LIMIT 5;
 +--------+------------+-----------+--------+
 | emp_no | first_name | last_name | salary |
 +--------+------------+-----------+--------+
@@ -2312,11 +6188,13 @@ Let’s discuss the types of JOINs supported by MySQL Syntax.</p>
 5 rows in set (0.00 sec)
 </code></pre>
 <p><strong>Outer Join</strong></p>
-<p>Majorly of two types:-
-- <strong>LEFT</strong> - joining complete table A with table B on a condition. All the records from table A are selected, but from table B, only those records are selected where the condition is True.
-- <strong>RIGHT</strong> - Exact opposite of the left join.</p>
-<p>Let us assume the below tables for understanding left join better.</p>
-<pre><code>mysql&gt; select * from dummy1;
+<p>Majorly of two types:</p>
+<ul>
+<li><strong>LEFT</strong> - joining complete table A with table B on a condition. All the records from table A are selected, but from table B, only those records are selected where the condition is True.</li>
+<li><strong>RIGHT</strong> - Exact opposite of the <code>LEFT JOIN</code>.</li>
+</ul>
+<p>Let us assume the below tables for understanding <code>LEFT JOIN</code> better.</p>
+<pre><code class="language-shell">mysql&gt; SELECT * FROM dummy1;
 +----------+------------+
 | same_col | diff_col_1 |
 +----------+------------+
@@ -2325,7 +6203,7 @@ Let’s discuss the types of JOINs supported by MySQL Syntax.</p>
 |        3 | C          |
 +----------+------------+
 
-mysql&gt; select * from dummy2;
+mysql&gt; SELECT * FROM dummy2;
 +----------+------------+
 | same_col | diff_col_2 |
 +----------+------------+
@@ -2333,8 +6211,8 @@ mysql&gt; select * from dummy2;
 |        3 | Y          |
 +----------+------------+
 </code></pre>
-<p>A simple select join will look like the one below.</p>
-<pre><code>mysql&gt; select * from dummy1 d1 left join dummy2 d2 on d1.same_col=d2.same_col;
+<p>A simple <code>SELECT JOIN</code> will look like the one below:</p>
+<pre><code class="language-shell">mysql&gt; SELECT * FROM dummy1 d1 LEFT JOIN dummy2 d2 ON d1.same_col=d2.same_col;
 +----------+------------+----------+------------+
 | same_col | diff_col_1 | same_col | diff_col_2 |
 +----------+------------+----------+------------+
@@ -2344,8 +6222,8 @@ mysql&gt; select * from dummy2;
 +----------+------------+----------+------------+
 3 rows in set (0.00 sec)
 </code></pre>
-<p>Which can also be written as</p>
-<pre><code>mysql&gt; select * from dummy1 d1 left join dummy2 d2 using(same_col);
+<p>Which can also be written as:</p>
+<pre><code class="language-shell">mysql&gt; SELECT * FROM dummy1 d1 LEFT JOIN dummy2 d2 USING(same_col);
 +----------+------------+------------+
 | same_col | diff_col_1 | diff_col_2 |
 +----------+------------+------------+
@@ -2355,8 +6233,8 @@ mysql&gt; select * from dummy2;
 +----------+------------+------------+
 3 rows in set (0.00 sec)
 </code></pre>
-<p>And also as</p>
-<pre><code>mysql&gt; select * from dummy1 d1 natural left join dummy2 d2;
+<p>And also as:</p>
+<pre><code class="language-shell">mysql&gt; SELECT * FROM dummy1 d1 NATURAL LEFT JOIN dummy2 d2;
 +----------+------------+------------+
 | same_col | diff_col_1 | diff_col_2 |
 +----------+------------+------------+
@@ -2368,8 +6246,8 @@ mysql&gt; select * from dummy2;
 </code></pre>
 <p><strong>Cross Join</strong></p>
 <p>This does a cross product of table A and table B without any condition. It doesn’t have a lot of applications in the real world.</p>
-<p>A Simple Cross Join looks like this</p>
-<pre><code>mysql&gt; select * from dummy1 cross join dummy2;
+<p>A Simple <code>CROSS JOIN</code> looks like this:</p>
+<pre><code class="language-shell">mysql&gt; SELECT * FROM dummy1 CROSS JOIN dummy2;
 +----------+------------+----------+------------+
 | same_col | diff_col_1 | same_col | diff_col_2 |
 +----------+------------+----------+------------+
@@ -2382,8 +6260,8 @@ mysql&gt; select * from dummy2;
 +----------+------------+----------+------------+
 6 rows in set (0.01 sec)
 </code></pre>
-<p>One use case that can come in handy is when you have to fill in some missing entries. For example, all the entries from dummy1 must be inserted into a similar table dummy3, with each record must have 3 entries with statuses 1, 5 and 7.</p>
-<pre><code>mysql&gt; desc dummy3;
+<p>One use case that can come in handy is when you have to fill in some missing entries. For example, all the entries from <code>dummy1</code> must be inserted into a similar table <code>dummy3</code>, with each record must have 3 entries with statuses 1, 5 and 7.</p>
+<pre><code class="language-shell">mysql&gt; DESC dummy3;
 +----------+----------+------+-----+---------+-------+
 | Field    | Type     | Null | Key | Default | Extra |
 +----------+----------+------+-----+---------+-------+
@@ -2393,11 +6271,11 @@ mysql&gt; select * from dummy2;
 +----------+----------+------+-----+---------+-------+
 3 rows in set (0.02 sec)
 </code></pre>
-<p>Either you create an insert query script with as many entries as in dummy1 or use cross join to produce the required resultset.</p>
-<pre><code>mysql&gt; select * from dummy1 
-cross join 
-(select 1 union select 5 union select 7) T2 
-order by same_col;
+<p>Either you create an <code>INSERT</code> query script with as many entries as in <code>dummy1</code> or use <code>CROSS JOIN</code> to produce the required resultset.</p>
+<pre><code class="language-shell">mysql&gt; SELECT * FROM dummy1 
+CROSS JOIN 
+(SELECT 1 UNION SELECT 5 UNION SELECT 7) T2 
+ORDER BY same_col;
 +----------+------------+---+
 | same_col | diff_col_1 | 1 |
 +----------+------------+---+
@@ -2416,7 +6294,7 @@ order by same_col;
 <p>The <strong>T2</strong> section in the above query is called a <em>sub-query</em>. We will discuss the same in the next section.</p>
 <p><strong>Natural Join</strong></p>
 <p>This implicitly selects the common column from table A and table B and performs an inner join.</p>
-<pre><code>mysql&gt; select e.emp_no,e.first_name,e.last_name,s.salary from employees e natural join salaries s limit 5;
+<pre><code class="language-shell">mysql&gt; SELECT e.emp_no,e.first_name,e.last_name,s.salary FROM employees e NATURAL JOIN salaries s LIMIT 5;
 +--------+------------+-----------+--------+
 | emp_no | first_name | last_name | salary |
 +--------+------------+-----------+--------+
@@ -2428,17 +6306,17 @@ order by same_col;
 +--------+------------+-----------+--------+
 5 rows in set (0.00 sec)
 </code></pre>
-<p>Notice how natural join and using takes care that the common column is displayed only once if you are not explicitly selecting columns for the query.</p>
-<p>Some More Examples</p>
-<p>Display emp_no, salary, title and dept of the employees where salary &gt; 80000</p>
-<pre><code>mysql&gt; select e.emp_no, s.salary, t.title, d.dept_no 
-from  
+<p>Notice how <code>NATURAL JOIN</code> and using takes care that the common column is displayed only once if you are not explicitly selecting columns for the query.</p>
+<p><strong>Some More Examples</strong></p>
+<p>Display <code>emp_no</code>, <code>salary</code>, <code>title</code> and <code>dept</code> of the employees where salary &gt; 80000.</p>
+<pre><code class="language-shell">mysql&gt; SELECT e.emp_no, s.salary, t.title, d.dept_no 
+FROM  
 employees e 
-join salaries s using (emp_no) 
-join titles t using (emp_no) 
-join dept_emp d using (emp_no) 
-where s.salary &gt; 80000 
-limit 5;
+JOIN salaries s USING (emp_no) 
+JOIN titles t USING (emp_no) 
+JOIN dept_emp d USING (emp_no) 
+WHERE s.salary &gt; 80000 
+LIMIT 5;
 +--------+--------+--------------+---------+
 | emp_no | salary | title        | dept_no |
 +--------+--------+--------------+---------+
@@ -2450,15 +6328,15 @@ limit 5;
 +--------+--------+--------------+---------+
 5 rows in set (0.00 sec)
 </code></pre>
-<p>Display title-wise count of employees in each department order by dept_no</p>
-<pre><code>mysql&gt; select d.dept_no, t.title, count(*) 
-from titles t 
-left join dept_emp d using (emp_no) 
-group by d.dept_no, t.title 
-order by d.dept_no 
-limit 10;
+<p>Display title-wise count of employees in each department ordered by <code>dept_no</code>:</p>
+<pre><code class="language-shell">mysql&gt; SELECT d.dept_no, t.title, COUNT(*) 
+FROM titles t 
+LEFT JOIN dept_emp d USING (emp_no) 
+GROUP BY d.dept_no, t.title 
+ORDER BY d.dept_no 
+LIMIT 10;
 +---------+--------------------+----------+
-| dept_no | title              | count(*) |
+| dept_no | title              | COUNT(*) |
 +---------+--------------------+----------+
 | d001    | Manager            |        2 |
 | d001    | Senior Staff       |    13940 |
@@ -2474,14 +6352,14 @@ limit 10;
 10 rows in set (1.32 sec)
 </code></pre>
 <h4 id="select-subquery">SELECT - Subquery</h4>
-<p>A subquery is generally a smaller resultset that can be used to power a select query in many ways. It can be used in a ‘where’ condition, can be used in place of join mostly where a join could be an overkill. 
-These subqueries are also termed as derived tables. They must have a table alias in the select query.</p>
+<p>A subquery is generally a smaller resultset that can be used to power a <code>SELECT</code> query in many ways. It can be used in a <code>WHERE</code> condition, can be used in place of <code>JOIN</code> mostly where a <code>JOIN</code> could be an overkill. 
+These subqueries are also termed as derived tables. They must have a table alias in the <code>SELECT</code> query.</p>
 <p>Let’s look at some examples of subqueries.</p>
-<p>Here we got the department name from the departments table by a subquery which used dept_no from dept_emp table.</p>
-<pre><code>mysql&gt; select e.emp_no, 
-(select dept_name from departments where dept_no=d.dept_no) dept_name from employees e 
-join dept_emp d using (emp_no) 
-limit 5;
+<p>Here, we got the department name from the <code>departments</code> table by a subquery which used <code>dept_no</code> from <code>dept_emp</code> table.</p>
+<pre><code class="language-shell">mysql&gt; SELECT e.emp_no, 
+(SELECT dept_name FROM departments WHERE dept_no=d.dept_no) dept_name FROM employees e 
+JOIN dept_emp d USING (emp_no) 
+LIMIT 5;
 +--------+-----------------+
 | emp_no | dept_name       |
 +--------+-----------------+
@@ -2493,23 +6371,23 @@ limit 5;
 +--------+-----------------+
 5 rows in set (0.01 sec)
 </code></pre>
-<p>Here, we used the ‘avg’ query above (which got the avg salary) as a subquery to list the employees whose latest salary is more than the average. </p>
-<pre><code>mysql&gt; select avg(salary) from salaries;
+<p>Here, we used the <code>AVG</code> query above (which got the avg salary) as a subquery to list the employees whose latest salary is more than the average. </p>
+<pre><code class="language-shell">mysql&gt; SELECT AVG(salary) FROM salaries;
 +-------------+
-| avg(salary) |
+| AVG(salary) |
 +-------------+
 |  63810.7448 |
 +-------------+
 1 row in set (0.80 sec)
 
-mysql&gt; select e.emp_no, max(s.salary) 
-from employees e 
-natural join salaries s 
-group by e.emp_no 
-having max(s.salary) &gt; (select avg(salary) from salaries) 
-limit 10;
+mysql&gt; SELECT e.emp_no, MAX(s.salary) 
+FROM employees e 
+NATURAL JOIN salaries s 
+GROUP BY e.emp_no 
+HAVING MAX(s.salary) &gt; (SELECT AVG(salary) FROM salaries) 
+LIMIT 10;
 +--------+---------------+
-| emp_no | max(s.salary) |
+| emp_no | MAX(s.salary) |
 +--------+---------------+
 |  10001 |         88958 |
 |  10002 |         72527 |
@@ -2524,101 +6402,75 @@ limit 10;
 +--------+---------------+
 10 rows in set (0.56 sec)
 </code></pre>
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
-        
-          <a href="../replication/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                MySQL Replication
-              </div>
-            </div>
-          </a>
-        
-        
-          <a href="../query_performance/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Query Performance
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+        <footer class="md-footer">
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-          <div class="md-footer-copyright__highlight">
-            Copyright 2020 LinkedIn Corporation. All Rights Reserved. Licensed under the Creative Commons Attribution 4.0 International Public License
-          </div>
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2020 LinkedIn Corporation. All Rights Reserved. Licensed under the Creative Commons Attribution 4.0 International Public License
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
-  <div class="md-footer-social">
+        <div class="md-social">
+  
+    
+    
+    
     
       
       
-        
-        
-      
-      <a href="https://github.com/linkedin/school-of-sre" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-      </a>
     
-  </div>
-
+    <a href="https://github.com/linkedin/school-of-sre" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.sections"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
       
     
   </body>
